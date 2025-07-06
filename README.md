@@ -1,5 +1,7 @@
 **Dynamic Pricing for Urban Parking Lots**
+
 **Capstone Project of Summer Analytics 2025**
+
 This project implements a dynamic pricing engine for urban parking spaces, designed to optimize utilization and revenue by adjusting prices in real-time based on various factors like demand, competition, and environmental conditions. It simulates a real-world system where traditional static pricing often leads to inefficiencies such as overcrowding or underutilization.
 
 
@@ -56,7 +58,7 @@ The dataset.csv file, containing historical parking data (occupancy, queue lengt
 
 Combining LastUpdatedDate and LastUpdatedTime into a single Timestamp.
 
-Calculating OccupancyRate (Occupancy / Capacity).
+**Calculating OccupancyRate (Occupancy / Capacity).**
 
 Encoding categorical features like VehicleType (into VehicleTypeWeight) and TrafficConditionNearby (into TrafficConditionEncoded) into numerical representations.
 
@@ -77,7 +79,7 @@ Prices are bounded to prevent erratic fluctuations.
 
 A more intelligent model that first constructs a mathematical demand function using multiple features: OccupancyRate, QueueLength, TrafficConditionEncoded, IsSpecialDay, and VehicleTypeWeight.
 
-Demand = α1·OccupancyRate + α2·QueueLength + α3·Traffic + α4·IsSpecialDay + α5·VehicleTypeWeight
+**Demand = α1·OccupancyRate + α2·QueueLength + α3·Traffic + α4·IsSpecialDay + α5·VehicleTypeWeight**
 
 The calculated raw demand is then normalized to a [0, 1] range.
 
@@ -136,11 +138,11 @@ cd dynamic-parking-pricing
 
 **Upload dataset.csv**: Ensure dataset.csv is in the same directory as the Jupyter notebook, especially if running in Google Colab.
 
-Open the Jupyter Notebook: Open dynamic_pricing_notebook.ipynb in Google Colab or a local Jupyter environment.
+**Open the Jupyter Notebook**: Open dynamic_pricing_notebook.ipynb in Google Colab or a local Jupyter environment.
 
 **Install Dependencies**: Run the initial cells to install necessary libraries (Pandas, NumPy, Bokeh).
 
-pip install pandas numpy bokeh
+**pip install pandas numpy bokeh**
 
 **Execute Cells**: Run all cells sequentially to perform data preprocessing, model calculations, and generate visualizations.
 
