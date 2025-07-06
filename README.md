@@ -1,17 +1,20 @@
-**Dynamic Pricing for Urban Parking Lots
-Capstone Project of Summer Analytics 2025**
+**Dynamic Pricing for Urban Parking Lots**
+**Capstone Project of Summer Analytics 2025**
 This project implements a dynamic pricing engine for urban parking spaces, designed to optimize utilization and revenue by adjusting prices in real-time based on various factors like demand, competition, and environmental conditions. It simulates a real-world system where traditional static pricing often leads to inefficiencies such as overcrowding or underutilization.
+
 
 The core of this project involves developing intelligent, data-driven pricing models from scratch using fundamental libraries, and integrating them into a real-time data streaming and processing pipeline.
 
 **🚀 Tech Stack**
+
 **Python**: The primary programming language for all logic and model implementations.
 
 **Pandas:** Used extensively for data manipulation, cleaning, and feature engineering.
 
 **NumPy**: Utilized for numerical operations, especially in mathematical model calculations.
 
-**Pathway** (Conceptual Integration): A powerful framework for building real-time data pipelines, used conceptually in this project for streaming data ingestion, real-time feature processing, and continuous pricing predictions.
+**Pathway** (Conceptual Integration): A powerful framework for building real-time data pipelines, used conceptually in this project for streaming data
+ingestion, real-time feature processing, and continuous pricing predictions.
 
 **Bokeh**: Employed for generating interactive, real-time visualizations to monitor and justify pricing behavior.
 
@@ -19,25 +22,37 @@ The core of this project involves developing intelligent, data-driven pricing mo
 The project follows a modular architecture, processing data through several stages to arrive at dynamic pricing recommendations.
 
 **Architecture Diagram**
+
 graph TD
+
     A[Raw Data Stream: dataset.csv] --> B(Pathway Ingestion: Real-time Data Stream);
+    
     B --> C{Pathway Preprocessing & Feature Engineering};
+    
     C --> D{Pricing Models};
+    
     D -- Model 1: Baseline Linear --> D1[Price_t+1 = Price_t + α * OccupancyRate];
+    
     D -- Model 2: Demand-Based --> D2[Demand Function & Price_t = BasePrice * (1 + λ * NormalizedDemand)];
+    
     D -- Model 3: Competitive --> D3[Haversine Distance & Competitor Price Factor];
+    
     D1 & D2 & D3 --> E(Pathway Output Stream: Real-time Prices);
+    
     E --> F[Bokeh Real-time Visualizations];
+    
     F --> G[Monitoring & Justification of Pricing];
+    
 
 **Detailed Workflow Explanation**
-**Data Ingestion (Pathway)**:
+
+**Data Ingestion (Pathway)**
 
 The dataset.csv file, containing historical parking data (occupancy, queue length, traffic, vehicle type, location, etc.), is conceptually ingested as a real-time data stream using Pathway. Pathway ensures data is streamed with simulated delays while preserving timestamp order.
 
-Preprocessing & Feature Engineering (Pathway/Pandas/NumPy):
+**Preprocessing & Feature Engineering (Pathway/Pandas/NumPy)**:
 
-As data streams in, it undergoes preprocessing. This includes:
+**As data streams in, it undergoes preprocessing. This includes**:
 
 Combining LastUpdatedDate and LastUpdatedTime into a single Timestamp.
 
@@ -54,7 +69,7 @@ The core of the dynamic pricing logic is implemented through three progressively
 
 A simple linear relationship where the next price is adjusted based on the current occupancy rate relative to the previous price. This serves as a foundational reference point.
 
-Price_t+1 = Price_t + α * OccupancyRate
+**Price_t+1 = Price_t + α * OccupancyRate**
 
 Prices are bounded to prevent erratic fluctuations.
 
@@ -99,13 +114,21 @@ Occupancy Rate vs. Price: Demonstrating the relationship between a lot's occupan
 These visualizations are crucial for monitoring the system's behavior and providing a visual justification for the pricing decisions.
 
 **📁 Repository Structure**
-.
-├── dataset (1).csv           # The raw dataset containing parking lot information.
+
+
+
+├── dataset.csv           # The raw dataset containing parking lot information.
+
 ├── problem statement.pdf     # Detailed project description and requirements.
+
 └── dynamic_pricing_notebook.ipynb # The main Jupyter Notebook containing all code.
+
 └── README.md                 # This file.
 
+
+
 **📝 Usage**
+
 **Clone the repository**:
 
 git clone <repository-url>
