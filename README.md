@@ -1,5 +1,5 @@
 ## 🛠️Dynamic Pricing for Urban Parking Lots Capstone Project 2025
-** 📖 Introduction**
+**📖 Introduction**
 
 This project implements a dynamic pricing engine for urban parking spaces, designed to optimize utilization and revenue by adjusting prices in real-time based on various factors like demand, competition, and environmental conditions. It simulates a real-world system where traditional static pricing often leads to inefficiencies such as overcrowding or underutilization.
 
@@ -27,7 +27,10 @@ ingestion, real-time feature processing, and continuous pricing predictions.
 
 **Bokeh**: Employed for generating interactive, real-time visualizations to monitor and justify pricing behavior.
 
+
+
 ## 🏗️ Project Architecture and Workflow
+
 The project follows a modular architecture, processing data through several stages to arrive at dynamic pricing recommendations.
 
 **Architecture Diagram**
@@ -91,7 +94,7 @@ The calculated raw demand is then normalized to a [0, 1] range.
 
 The normalized demand directly influences the price: **Price_t = BasePrice * (1 + λ * NormalizedDemand)**.
 
-Strict bounds (0.5x to 2x BASE_PRICE) are applied to ensure smooth and explainable price variations.
+Strict bounds **(0.5x to 2x BASE_PRICE)** are applied to ensure smooth and explainable price variations.
 
 ### 🔹Model 3: **Competitive Pricing Model (Optional)**:
 
@@ -120,6 +123,39 @@ Comparison with competitor prices: Illustrating how a specific lot's price compa
 Occupancy Rate vs. Price: Demonstrating the relationship between a lot's occupancy and its dynamically set price.
 
 These visualizations are crucial for monitoring the system's behavior and providing a visual justification for the pricing decisions.
+
+### 🏗️ Architecture Diagram Description
+
+```
++------------------+         +----------------------+        +---------------------+
+|                  |         |                      |        |                     |
+|  Real-Time Data   | ----->  |  Data Preprocessing  | -----> |  Pricing Models      |
+|  Sources:        |         |  & Feature Engineering|        |  (Model 1, 2, 3)    |
+|  - Parking Sensors|         |                      |        |                     |
+|  - Traffic APIs  |         +----------------------+        +---------------------+
+|  - Queue Status  |                                              |
++------------------+                                              |
+                                                                   v
+                                                          +---------------------+
+                                                          |  Rerouting Logic &   |
+                                                          |  Geo-Competitive     |
+                                                          |  Pricing Module      |
+                                                          +---------------------+
+                                                                   |
+                                                                   v
+                                                          +---------------------+
+                                                          | Streamlit Dashboard  |
+                                                          | (Visualization &     |
+                                                          | Simulation UI)       |
+                                                          +---------------------+
+                                                                   |
+                                                                   v
+                                                          +---------------------+
+                                                          | User Interaction &   |
+                                                          | Parameter Tuning     |
+                                                          +---------------------+
+```
+
 
 ## 📁 Repository Structure
 
@@ -160,7 +196,7 @@ cd dynamic-parking-pricing
 
 **Pathway Integration (Conceptual)**: The Pathway section is conceptual. To run a live Pathway application, you would need to set up a Pathway environment and adapt the conceptual code to a runnable streaming pipeline.
 
-**🤝 Contributing**
+## 🤝 Contributing
 Feel free to fork this repository, implement further enhancements, or suggest improvements!
 
 ## 🌟 Acknowledgements
