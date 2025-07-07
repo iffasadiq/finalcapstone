@@ -146,14 +146,9 @@ These visualizations are crucial for monitoring the system's behavior and provid
                                                           +---------------------+
                                                           | Streamlit Dashboard  |
                                                           | (Visualization &     |
-                                                          | Simulation UI)       |
+                                                          | Simulation)          |
                                                           +---------------------+
-                                                                   |
-                                                                   v
-                                                          +---------------------+
-                                                          | User Interaction &   |
-                                                          | Parameter Tuning     |
-                                                          +---------------------+
+                                                          
 ```
 
 
