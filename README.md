@@ -1,4 +1,4 @@
-## 🛠️Dynamic Pricing for Urban Parking Lots Capstone Project 2025**
+## 🛠️Dynamic Pricing for Urban Parking Lots Capstone Project 2025
 ** 📖 Introduction**
 
 This project implements a dynamic pricing engine for urban parking spaces, designed to optimize utilization and revenue by adjusting prices in real-time based on various factors like demand, competition, and environmental conditions. It simulates a real-world system where traditional static pricing often leads to inefficiencies such as overcrowding or underutilization.
