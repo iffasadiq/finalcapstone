@@ -1,13 +1,19 @@
-**Dynamic Pricing for Urban Parking Lots**
-
-**Capstone Project of Summer Analytics 2025**
-
+## Dynamic Pricing for Urban Parking Lots Capstone Project of Summer Analytics 2025 IIT Guhawati**
+** 📖 Introduction**
 This project implements a dynamic pricing engine for urban parking spaces, designed to optimize utilization and revenue by adjusting prices in real-time based on various factors like demand, competition, and environmental conditions. It simulates a real-world system where traditional static pricing often leads to inefficiencies such as overcrowding or underutilization.
 
 
 The core of this project involves developing intelligent, data-driven pricing models from scratch using fundamental libraries, and integrating them into a real-time data streaming and processing pipeline.
 
-**🚀 Tech Stack**
+## 🎯 Objectives
+
+* Design **three adaptive pricing models**: baseline linear, demand-weighted, and geo-competitive.
+* Simulate **real-time price adjustments** as demand changes over time.
+* Implement **rerouting logic** to redirect vehicles from full lots to nearby alternatives.
+* Provide a **Streamlit dashboard** to visualize price changes and simulate the system interactively.
+* Enable smarter city-level parking distribution using data-centric logic.
+
+## 🚀 Tech Stack
 
 **Python**: The primary programming language for all logic and model implementations.
 
@@ -20,7 +26,7 @@ ingestion, real-time feature processing, and continuous pricing predictions.
 
 **Bokeh**: Employed for generating interactive, real-time visualizations to monitor and justify pricing behavior.
 
-**🏗️ Project Architecture and Workflow**
+##🏗️ Project Architecture and Workflow
 The project follows a modular architecture, processing data through several stages to arrive at dynamic pricing recommendations.
 
 **Architecture Diagram**
@@ -46,10 +52,9 @@ graph TD
     F --> G[Monitoring & Justification of Pricing];
     
 
-**Detailed Workflow Explanation**
+##Detailed Workflow Explanation
 
 **Data Ingestion (Pathway)**
-
 The dataset.csv file, containing historical parking data (occupancy, queue length, traffic, vehicle type, location, etc.), is conceptually ingested as a real-time data stream using Pathway. Pathway ensures data is streamed with simulated delays while preserving timestamp order.
 
 **Preprocessing & Feature Engineering (Pathway/Pandas/NumPy)**:
@@ -67,7 +72,7 @@ These transformations are designed to be compatible with Pathway's real-time pro
 **Pricing Models (Pandas/NumPy)**:
 The core of the dynamic pricing logic is implemented through three progressively sophisticated models:
 
-**Model 1**: **Baseline Linear Model**:
+### 🔹Model 1: **Baseline Linear Model**:
 
 A simple linear relationship where the next price is adjusted based on the current occupancy rate relative to the previous price. This serves as a foundational reference point.
 
@@ -75,7 +80,7 @@ A simple linear relationship where the next price is adjusted based on the curre
 
 Prices are bounded to prevent erratic fluctuations.
 
-**Model 2**: **Demand-Based Price Function**:
+### 🔹Model 2: **Demand-Based Price Function**:
 
 A more intelligent model that first constructs a mathematical demand function using multiple features: OccupancyRate, QueueLength, TrafficConditionEncoded, IsSpecialDay, and VehicleTypeWeight.
 
@@ -83,11 +88,11 @@ A more intelligent model that first constructs a mathematical demand function us
 
 The calculated raw demand is then normalized to a [0, 1] range.
 
-The normalized demand directly influences the price: Price_t = BasePrice * (1 + λ * NormalizedDemand).
+The normalized demand directly influences the price: **Price_t = BasePrice * (1 + λ * NormalizedDemand)**.
 
 Strict bounds (0.5x to 2x BASE_PRICE) are applied to ensure smooth and explainable price variations.
 
-**Model 3**: **Competitive Pricing Model (Optional)**:
+### 🔹Model 3: **Competitive Pricing Model (Optional)**:
 
 This model introduces location intelligence. It calculates the geographical proximity between parking spaces using the Haversine formula based on Latitude and Longitude.
 
@@ -105,7 +110,7 @@ The calculated dynamic prices from the chosen model (or all models for compariso
 
 Bokeh is used to create interactive plots that consume the real-time price data.
 
-**Key visualizations include**:
+## Key visualizations include:
 
 Real-time pricing line plots: Showing price changes over time for individual parking spaces across different models.
 
@@ -115,7 +120,7 @@ Occupancy Rate vs. Price: Demonstrating the relationship between a lot's occupan
 
 These visualizations are crucial for monitoring the system's behavior and providing a visual justification for the pricing decisions.
 
-**📁 Repository Structure**
+## 📁 Repository Structure
 
 
 
@@ -129,7 +134,7 @@ These visualizations are crucial for monitoring the system's behavior and provid
 
 
 
-**📝 Usage**
+## 📝 Usage
 
 **Clone the repository**:
 
