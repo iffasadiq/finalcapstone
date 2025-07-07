@@ -1,5 +1,6 @@
-## Dynamic Pricing for Urban Parking Lots Capstone Project of Summer Analytics 2025 IIT Guhawati**
+## 🛠️Dynamic Pricing for Urban Parking Lots Capstone Project 2025**
 ** 📖 Introduction**
+
 This project implements a dynamic pricing engine for urban parking spaces, designed to optimize utilization and revenue by adjusting prices in real-time based on various factors like demand, competition, and environmental conditions. It simulates a real-world system where traditional static pricing often leads to inefficiencies such as overcrowding or underutilization.
 
 
@@ -26,7 +27,7 @@ ingestion, real-time feature processing, and continuous pricing predictions.
 
 **Bokeh**: Employed for generating interactive, real-time visualizations to monitor and justify pricing behavior.
 
-##🏗️ Project Architecture and Workflow
+## 🏗️ Project Architecture and Workflow
 The project follows a modular architecture, processing data through several stages to arrive at dynamic pricing recommendations.
 
 **Architecture Diagram**
@@ -52,7 +53,7 @@ graph TD
     F --> G[Monitoring & Justification of Pricing];
     
 
-##Detailed Workflow Explanation
+## 🎯Detailed Workflow Explanation
 
 **Data Ingestion (Pathway)**
 The dataset.csv file, containing historical parking data (occupancy, queue length, traffic, vehicle type, location, etc.), is conceptually ingested as a real-time data stream using Pathway. Pathway ensures data is streamed with simulated delays while preserving timestamp order.
@@ -132,7 +133,13 @@ These visualizations are crucial for monitoring the system's behavior and provid
 
 └── README.md                 # This file.
 
+## 🔮 Future Work
 
+* Integrate **live traffic APIs** (e.g., Google Maps) for real-time congestion updates.
+* Build a **driver-facing mobile app** that displays optimal nearby parking with live prices.
+* Add **reinforcement learning** to self-tune model weights based on revenue vs fairness.
+* Use **map-based visualization** for geographic monitoring of all lots.
+* Deploy the app publicly using **Streamlit Cloud or AWS Lambda**.
 
 ## 📝 Usage
 
@@ -156,6 +163,15 @@ cd dynamic-parking-pricing
 **🤝 Contributing**
 Feel free to fork this repository, implement further enhancements, or suggest improvements!
 
+## 🌟 Acknowledgements
 
+This project was developed as part of Summer Analytics Course 2025 Academic Work at **Indian Institute of Technology (IIT) Guwahati**.
+
+Special thanks to:
+
+* **Pathway** – for real-time data streaming tools.
+* **Streamlit** – for rapid dashboard development.
+* **OpenStreetMap** – for geospatial context.
+* **Plotly & Bokeh** – for powerful interactive plotting.
 
 
